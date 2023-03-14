@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1065605756836",
+    "firebase_url": "https://fir-project-945fc-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "fir-project-945fc",
+    "storage_bucket": "fir-project-945fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065605756836:android:a3dd7981a55c243e0af331",
+        "android_client_info": {
+          "package_name": "com.xeniav.testproject3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065605756836-9115a98ru91v09stokvd28nl0jq6kltu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgDVpVWlAUleuft_doCfwV7m4eelpJkcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065605756836-9115a98ru91v09stokvd28nl0jq6kltu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
