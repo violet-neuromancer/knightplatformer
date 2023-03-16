@@ -26,7 +26,10 @@ public class Dragon : Creature
         var knight = colliderDragon.gameObject.GetComponent<Knight>();
 
         if (knight != null)
+        {
             _animator.SetTrigger(AttackTrigger);
+            Attack();
+        }
         else
             ChangeDirection();
     }
@@ -60,7 +63,6 @@ public class Dragon : Creature
     public void Attack()
     {
         Vector3 hitPosition =  transform.TransformPoint(hitCollider.offset);
-
         DoHit(hitPosition, hitCollider.radius, Damage);
     }
 }

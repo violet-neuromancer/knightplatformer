@@ -1,21 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class Audio
 {
-    #region Private_Variables
+    [SerializeField] private AudioClip[] sounds;
+    [SerializeField] private AudioClip defaultClip;
+    [SerializeField] private AudioClip menuMusic;
+    [SerializeField] private AudioClip gameMusic;
+    
     private AudioSource sourceSFX;
     private AudioSource sourceMusic;
     private AudioSource sourceRandomPitchSFX;
     private float musicVolume = 1f;
     private float sfxVolume = 1f;
-    [SerializeField] private AudioClip[] sounds;
-    [SerializeField] private AudioClip defaultClip;
-    [SerializeField] private AudioClip menuMusic;
-    [SerializeField] private AudioClip gameMusic;
-    #endregion
 
     public float MusicVolume
     {
@@ -62,11 +59,6 @@ public class Audio
         set => sourceRandomPitchSFX = value;
     }
     
-    /// <summary>
-    /// Поиск звука в массиве
-    /// </summary>
-    /// <param name="clipName">Имя звука</param>
-    /// <returns>Звук. Если звку не найден, возвращается значение переменной  defaultClip</returns>
     private AudioClip GetSound(string clipName)
     {
         for (int i = 0; i < sounds.Length; i++)
@@ -81,29 +73,18 @@ public class Audio
 
         return defaultClip;
     }
-
-    /// <summary>
-    /// Воспроизведение звука из массива
-    /// </summary>
-    /// <param name="clipName">Имя звука</param>
+    
     public void PlaySound(string clipName)
     {
         SourceSFX.PlayOneShot(GetSound(clipName), SfxVolume);
     }
-
-    /// <summary>
-    /// Воспроизведение звука из массива со случайной частотой     /// </summary>
-    /// <param name="clipName">Имя звука</param>
+    
     public void PlaySoundRandomPitch(string clipName)
     {
         SourceRandomPitchSFX.pitch = Random.Range(0.7f, 1.3f);
         SourceRandomPitchSFX.PlayOneShot(GetSound(clipName), SfxVolume);
     }
- 
-    /// <summary>
-    /// Воспроизведение музыки
-    /// </summary>
-    /// <param name="menu">для главного меню?</param>
+    
     public void PlayMusic(bool menu)
     {
         if (menu)
